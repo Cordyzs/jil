@@ -74,6 +74,74 @@ button:hover{
     <h1>Search</h1>
 
     <input id="searchBox" type="text" placeholder="Search anything...">
+    <br><br>
+
+    <button onclick="startPrank()">Search</button>
+</div>
+
+<div id="jumpscare">
+    <video id="jumpVideo" playsinline>
+        <source src="jumpscare.mp4" type="video/mp4">
+        Your browser does not support video.
+    </video>
+</div>
+
+<script>
+function startPrank() {
+    // Hide the fake search page
+    document.querySelector(".container").style.display = "none";
+
+    // Show the video
+    document.getElementById("jumpscare").style.display = "block";
+
+    // Play the video
+    const video = document.getElementById("jumpVideo");
+    video.currentTime = 0;
+    video.play();
+}
+</script>
+
+</body>
+</html>button{
+    margin-top:20px;
+    padding:10px 25px;
+    font-size:18px;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+    background:#4285F4;
+    color:white;
+}
+
+button:hover{
+    background:#3367D6;
+}
+
+#jumpscare{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:black;
+    z-index:9999;
+}
+
+#jumpVideo{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Search</h1>
+
+    <input id="searchBox" type="text" placeholder="Search anything...">
     <br>
     <button onclick="startPrank()">Search</button>
 </div>
